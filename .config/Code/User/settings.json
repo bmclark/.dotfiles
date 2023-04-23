@@ -1,12 +1,14 @@
 {
-    "workbench.colorTheme": "SynthWave '84",
-    "git.autofetch": true,
-    "editor.fontFamily": "'Fira Code Mono', 'Droid Sans Mono', 'monospace', monospace",
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "editor.formatOnType": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.colorTheme": "SynthWave '84",
+  "git.autofetch": true,
+  "editor.fontFamily": "'Hack', 'Fira Code Mono', 'Droid Sans Mono', 'monospace', monospace",
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "editor.formatOnType": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "git.confirmSync": false
 }
