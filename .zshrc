@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+eval `dircolors ~/.dir_colors`
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -95,6 +96,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 source ~/antigen.zsh
+
+## tmux plugin variables
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_UNICODE=true
+ZSH_TMUX_DEFAULT_SESSION_NAME=$USER
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
