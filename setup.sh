@@ -22,22 +22,27 @@ install_redhat_fedora() {
     sudo dnf install -y stow
 }
 
-# Detect the distribution
-detect_distro
+if ! command -v stow &> /dev/null
+then
+    echo "GNU stow could not be found. Installing..."
+    # Detect the distribution
+    detect_distro
 
-# Choose the install function based on the detected distribution
-case "$DISTRO" in
-    "ubuntu"|"debian")
-        install_debian_ubuntu
-        ;;
-    "rhel"|"fedora")
-        install_redhat_fedora
-        ;;
-    *)
-        echo "Unsupported distribution: $DISTRO"
-        exit 1
-        ;;
-esac
+    # Choose the install function based on the detected distribution
+    case "$DISTRO" in
+        "ubuntu"|"debian")
+            install_debian_ubuntu
+            ;;
+        "rhel"|"fedora")
+            install_redhat_fedora
+            ;;
+        *)
+            echo "Unsupported distribution: $DISTRO"
+            exit 1
+            ;;
+    esac
+fi
+
 
 echo "GNU Stow installation complete."
 echo "Installing dotfiles"
