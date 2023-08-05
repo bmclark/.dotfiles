@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-eval `dircolors ~/.dir_colors`
+#eval `dircolors ~/.dir_colors`
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -89,7 +89,6 @@ plugins=(
   cp
   gitfast 
   zsh-shift-select
-  calc
   extract
 )
 
@@ -109,6 +108,7 @@ antigen bundle hlissner/zsh-autopair
 antigen bundle zsh-users/zsh-completions
 antigen bundle zdharma-continuum/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle arzzen/calc.plugin.zsh
 
 # Tell Antigen that you're done.
 antigen apply
