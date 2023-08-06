@@ -1,0 +1,1 @@
+alias emacs="flatpak run --command=emacsclient org.gnu.emacs --create-frame"
