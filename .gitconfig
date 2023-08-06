@@ -1,3 +1,5 @@
 [user]
 	name = Bryan Clark
 	email = bryan@bclark.net
+[init]
+	defaultBranch = main
