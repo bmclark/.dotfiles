@@ -1,0 +1,11 @@
+[Unit]
+Description=Flatpak Emacs Daemon
+
+[Service]
+Type=simple
+Environment=DISPLAY=:0  # Adjust if necessary (use "echo $DISPLAY" to find the correct value)
+ExecStart=/usr/bin/flatpak run org.gnu.emacs --daemon
+ExecStop=/usr/bin/flatpak run org.gnu.emacs --eval "(progn (setq kill-emacs-hook nil) (kill-emacs))"
+
+[Install]
+WantedBy=default.target
