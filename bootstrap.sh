@@ -36,7 +36,7 @@ install_pip3() {
 
 # Install Ansible via pip
 install_ansible() {
-    if ! command -v pip3 > /dev/null 2>&1; then
+    if ! command -v ansible > /dev/null 2>&1; then
         echo "Ansible not found. Installing..."
         pip3 install --user ansible
     fi
