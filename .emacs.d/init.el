@@ -12,6 +12,7 @@
 ;; Set up the visible bell
 (setq visible-bell t)
 
+;; Set up font
 (set-face-attribute 'default nil :font "FiraCode Nerd Font Mono" :height 140)
 
 ;; Make ESC quit prompts
