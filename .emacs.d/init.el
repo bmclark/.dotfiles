@@ -215,6 +215,14 @@
 
 (use-package all-the-icons)
 
+;; set up ox-hugo
+;; =======================================================================
+(use-package ox-hugo
+  :ensure t
+  :after ox)
+
+;; ivy packages
+;; =======================================================================
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper)
