@@ -169,6 +169,12 @@
             ((org-agenda-overriding-header "Cancelled Projects")
              (org-agenda-files org-agenda-files)))))))
 
+  (defun create-hugo-post ()
+    "Create an org file for a hugo blog post."
+    (interactive)
+    (let ((name (read-string "filename: ")))
+      (expand-file-name (format "%s.org"
+				name) "~/src/blog.bclark.dev/org-posts/")))
   (setq org-capture-templates
     `(("t" "Tasks / Projects")
       ("tt" "Task" entry (file+olp "~/Documents/org/todo.org" "Inbox")
@@ -186,6 +192,19 @@
            "* %<%I:%M %p> - %a :meetings:\n\n%?\n\n"
            :clock-in :clock-resume
            :empty-lines 1)
+
+      ("b" "Blog post")
+      ("bb" "blog.bclark.dev" plain
+       (file create-hugo-post)
+       "#+hugo_base_dir: ../
+#+hugo_section: posts
+#+hugo_auto_set_lastmod: t
+#+title: %?
+#+date: %(format-time-string \"%Y-%m-%d %h %H:%M\")
+
+"
+       :jump-to-captured t
+       :immediate-finish t)
 
       ("w" "Workflows")
       ("we" "Checking Email" entry (file+olp+datetree ""~/Documents/org/journal.org")
