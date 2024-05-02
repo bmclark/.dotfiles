@@ -203,8 +203,7 @@
 #+date: %(format-time-string \"%Y-%m-%d %h %H:%M\")
 
 "
-       :jump-to-captured t
-       :immediate-finish t)
+       :jump-to-captured t)
 
       ("w" "Workflows")
       ("we" "Checking Email" entry (file+olp+datetree ""~/Documents/org/journal.org")
