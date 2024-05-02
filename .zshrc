@@ -109,6 +109,7 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zdharma-continuum/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle arzzen/calc.plugin.zsh
+antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply
