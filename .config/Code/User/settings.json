@@ -5,10 +5,43 @@
   "[python]": {
     "editor.formatOnType": true
   },
-  "terminal.integrated.fontFamily": "MesloLGS NF",
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "window.titleBarStyle": "custom",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "trailing",
+  "editor.cursorStyle": "underline",
+  "editor.wordWrap": "bounded",
+  "security.workspace.trust.untrustedFiles": "open",
+  "redhat.telemetry.enabled": false,
+  "git.autofetch": true,
+  "[github-actions-workflow]": {},
+  "editor.stickyTabStops": true,
+  "editor.detectIndentation": false,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash"
+    },
+    "zsh": {
+      "path": "zsh"
+    },
+    "fish": {
+      "path": "fish"
+    },
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux"
+    },
+    "pwsh": {
+      "path": "pwsh",
+      "icon": "terminal-powershell"
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh"
 }
