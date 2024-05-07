@@ -203,9 +203,9 @@
 #+title: %?
 #+date: %(format-time-string \"%Y-%m-%d %h %H:%M\")
 #+hugo_tags:
-#+hugo_custom_front_matter: :author "Bryan Clark"
+#+hugo_custom_front_matter: :author \"Bryan Clark\"
 #+hugo_custom_front_matter: :keywords '()
-#+hugo_custom_front_matter: :description ""
+#+hugo_custom_front_matter: :description \"\"
 
 "
        :jump-to-captured t)
