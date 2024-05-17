@@ -43,5 +43,8 @@
       "icon": "terminal-powershell"
     }
   },
-  "terminal.integrated.defaultProfile.linux": "tmux"
+  "terminal.integrated.defaultProfile.linux": "tmux",
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "cSpell.userWords": ["pylance", "vultr"],
+  "explorer.confirmDelete": false
 }
