@@ -26,7 +26,8 @@ plugins=(
   colorize
   command-not-found
   cp
-  gitfast 
+  gitfast
+  terraform
   zsh-shift-select
   extract
 )
