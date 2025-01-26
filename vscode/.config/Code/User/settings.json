@@ -2,9 +2,6 @@
   "workbench.colorTheme": "SynthWave '84",
   "git.autofetch": true,
   "editor.fontFamily": "'Hack', 'Fira Code Mono', 'Droid Sans Mono', 'monospace', monospace",
-  "[python]": {
-    "editor.formatOnType": true
-  },
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
@@ -18,7 +15,6 @@
   "editor.wordWrap": "bounded",
   "security.workspace.trust.untrustedFiles": "open",
   "redhat.telemetry.enabled": false,
-  "git.autofetch": true,
   "[github-actions-workflow]": {},
   "editor.stickyTabStops": true,
   "editor.detectIndentation": false,
@@ -43,7 +39,7 @@
       "icon": "terminal-powershell"
     }
   },
-  "terminal.integrated.defaultProfile.linux": "tmux",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "editor.unicodeHighlight.nonBasicASCII": false,
   "cSpell.userWords": ["pylance", "vultr"],
   "explorer.confirmDelete": false

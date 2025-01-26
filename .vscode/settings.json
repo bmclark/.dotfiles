@@ -3,6 +3,7 @@
       "tmux",
       "brew",
       "scripts",
-      "zsh"
+      "zsh",
+      "vscode"
     ]
 }
