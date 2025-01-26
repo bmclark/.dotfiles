@@ -31,15 +31,18 @@ unpack_dotfiles() {
     cd "$HOME/.dotfiles" || exit 1
 
     echo "Unpacking dotfiles..."
-    stow -t "$HOME" ansible
-    stow -t "$HOME" bash
-    stow -t "$HOME" emacs
-    stow -t "$HOME" git
-    stow -t "$HOME" ssh
-    stow -t "$HOME" systemd
-    stow -t "$HOME" tmux
-    stow -t "$HOME" vscode
-    stow -t "$HOME" zsh
+    stow -t "$HOME" --adopt ansible
+    stow -t "$HOME" --adopt bash
+    stow -t "$HOME" --adopt emacs
+    stow -t "$HOME" --adopt git
+    stow -t "$HOME" --adopt ssh
+    stow -t "$HOME" --adopt systemd
+    stow -t "$HOME" --adopt tmux
+    stow -t "$HOME" --adopt vscode
+    stow -t "$HOME" --adopt zsh
+
+    # restore in case any were overwritten
+    git restore .
 }
 
 # Install fonts
