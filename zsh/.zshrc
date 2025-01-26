@@ -45,6 +45,7 @@ ZSH_TMUX_DEFAULT_SESSION_NAME=$USER
 
 # Increase the number of lines of history saved
 HISTSIZE=100000
+HISTFILE=~/.zsh_history
 SAVEHIST=100000
 
 # Uncomment the following line to display red dots whilst waiting for completion.
