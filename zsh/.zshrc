@@ -29,6 +29,9 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zdharma-continuum/fast-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle arzzen/calc.plugin.zsh
+antigen bundle mrjohannchang/fz.sh
+antigen bundle unixorn/prettyping
+antigen bundle jirutka/zsh-shift-select
 
 # Load the theme.
 antigen theme romkatv/powerlevel10k
@@ -94,5 +97,9 @@ COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.aliases
 
+eval "$(atuin init zsh)"
+eval "$(zoxide init zsh)"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# (( ! ${+functions[p10k]} )) || p10k finalize
