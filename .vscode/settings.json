@@ -1,0 +1,8 @@
+{
+    "conventionalCommits.scopes": [
+      "tmux",
+      "brew",
+      "scripts",
+      "zsh"
+    ]
+}
