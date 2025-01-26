@@ -77,15 +77,7 @@ change_default_shell() {
 setup_zsh() {
     install_package "zsh"
     change_default_shell "zsh"
-
-    # Install antigen
-    if [ ! -f "$HOME/antigen.zsh" ]; then
-        echo "Installing antigen..."
-        curl -L git.io/antigen > "$HOME/antigen.zsh"
-    else
-        echo "antigen is already installed."
-    fi
-
+    install_package "antigen"
 }
 
 # Install tmux
