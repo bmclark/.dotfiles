@@ -1,56 +1,58 @@
-#!/bin/sh
+#!/usr/bin/env sh
+# This script bootstraps the installation of dotfiles on a new MacOS or Lnux machine.
 
-# Function to detect the distro
-detect_distro() {
-    if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        DISTRO=$ID
+set -e
+
+check_package() {
+    echo "Checking if $1 is installed..."
+    if command -v "$1" > /dev/null 2>&1; then
+        return 0
     else
-        echo "Cannot identify the distribution."
-        exit 1
+        return 1
     fi
 }
 
-# Install pip3 if it doesn't exist
-install_pip3() {
-    if ! command -v pip3 > /dev/null 2>&1; then
-        echo "pip3 not found. Installing..."
-        case "$DISTRO" in
-            "ubuntu"|"debian")
-                sudo apt-get update
-                sudo apt-get install -y python3-pip git
-                ;;
-            "opensuse")
-                sudo zypper install -y python3-pip git
-                ;;
-            "fedora"|"rhel")
-                sudo dnf install -y python3-pip git
-                ;;
-            *)
-                echo "Unsupported distribution: $DISTRO"
-                exit 1
-                ;;
-        esac
+install_package() {
+    if check_package "$1"; then
+        echo "$1 is already installed."
+    else
+        echo "Installing $1..."
+        brew install "$1"
     fi
 }
 
-# Install Ansible via pip
-install_ansible() {
-    if ! command -v ansible > /dev/null 2>&1; then
-        echo "Ansible not found. Installing..."
-        pip3 install --user ansible
+install_homebrew() {
+    if check_package "brew"; then
+        echo "Homebrew is already installed."
+    else
+        echo "Installing Homebrew..."
+        /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
 }
 
-# Main function
 main() {
-    detect_distro
-    install_pip3
-    install_ansible
+    echo "Bootstrapping packages needed to install dotfiles..."
+
+    install_homebrew
+    install_package "git"
+    install_package "stow"
+
+    cd ~
+
+    # check if the repository already exists
+    if [ -d ~/.dotfiles ]; then
+        echo "A  ~/.dotfiles repository already exists..."
+        echo "Updating dotfiles repository..."
+        cd ~/.dotfiles
+        git fetch && git pull
+    else
+        echo "Cloning dotfiles repository..."
+        git clone https://github.com/bmclark/.dotfiles.git ~/.dotfiles
+    fi
+
+    echo "Running ~/.dotfiles/scripts/install.sh..."
+    cd ~/.dotfiles/scripts
+    sh install.sh
 }
 
 main
-
-echo "Dependency installation complete."
-echo "Installing dotfiles"
-ansible-pull -U https://git.bclark.net/bryan/ansible-bootstrap.git main.yml
