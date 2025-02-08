@@ -2,4 +2,4 @@
 
 This is a collection of my dotfiles.
 
-Install GNU stow and then run `stow .` from this directory to symlink these files into the same locations in your home directory.
+You can just run `sh -c "$(curl -fsSL https://raw.githubusercontent.com/bmclark/.dotfiles/refs/heads/main/scripts/bootstrap.sh)"` to bootstrap the installation.
